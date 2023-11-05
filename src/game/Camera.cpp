@@ -60,7 +60,8 @@ static glm::mat4x4 createProjectionMatrix(const Vec2f & size, const Vec2f & cent
 	float Q = farDist / frustumDepth;
 	
 	glm::mat4x4 projectionMatrix(1.f);
-	projectionMatrix[0][0] = w;
+	// MIRROR WORLD
+	projectionMatrix[0][0] = -w;
 	projectionMatrix[1][1] = -h;
 	projectionMatrix[2][2] = Q;
 	projectionMatrix[3][2] = -Q * nearDist;
