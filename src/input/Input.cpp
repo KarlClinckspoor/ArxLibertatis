@@ -580,6 +580,8 @@ void Input::update(float time) {
 		if(m_invertMouseY) {
 			m_mouseMovement.y *= -1.f;
 		}
+		// MIRROR WORLD
+		m_mouseMovement.x *= -1.f;
 		
 		if(!mouseInWindow) {
 			LogWarning << "Cursor escaped the window while in relative input mode";
